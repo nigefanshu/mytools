@@ -12,6 +12,17 @@ def compute_target_diff():
     print("目标值十进制:", currenttarget)
     currenttarget_hex = hex(currenttarget)
     print("目标值十六进制:%s  左侧省略%d个0 " % (currenttarget_hex, 64 - len(currenttarget_hex)))
-    print("难度值：", maxcurrenttargettarget / currenttarget)
-    exit(0)
+    print("难度值：%.20f" % (maxcurrenttargettarget / currenttarget))
 
+
+def testblockheader():
+    blockheader = input("blockheader: ")
+    blockheader = int(blockheader, 16)
+    print("难度值: ", 0x00000000FFFF0000000000000000000000000000000000000000000000000000 / blockheader)
+
+
+def expected_time_block():
+    diff=input("难度：")
+    power=input("算力(MH/s)：")
+    time=10*int(diff)*7.185/int(power)
+    print(time)

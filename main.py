@@ -1,4 +1,10 @@
+# from bitcoin_tools import *
+import bitcoin_tools
+import global_var
+import threading
 
-from bitcoin_tools import *
+# bitcoin_tools.compute_target_diff()
 
-#compute_target_diff()
+# help(threading)
+
+bitcoin_tools.expected_time_block()
