@@ -22,7 +22,7 @@ def testblockheader():
 
 
 def expected_time_block():
-    diff=input("难度：")
-    power=input("算力(MH/s)：")
-    time=10*int(diff)*7.185/int(power)
-    print(time)
+    diff = input("难度：")
+    power = input("算力(MH/s)：")
+    time = 10 * int(diff) * 7.185 / int(power)
+    print(time, "mins")
