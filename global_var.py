@@ -1,7 +1,6 @@
 # Copyright (c) 2018 GenYuanLian
 # -*- coding: utf-8 -*-
 
-
 def _init():  # 初始化
     global _global_dict
     _global_dict = {}
@@ -17,4 +16,4 @@ def get_value(key, defvalue=None):
     except KeyError:
         return defvalue
 
-subsidy = {}
+subsidy = {'test':'test'}

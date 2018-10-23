@@ -2,25 +2,37 @@
 #include "Python.h"
 
 //原始函数
-int abs(int n){
-  if(n<0){
-    return n*-1;
-  }
-  return n;
+int test(int n){
+    while(n<1000000){
+        if(n/2==0){
+            n++;
+            continue;
+        }
+        if(n/3==0){
+            n+=2;
+            continue;
+        }
+        n++;
+    }
+    return n;
+}
+
+int taikong(int i){
+  return ++i;
 }
 
 //包装为模块：模块名_方法名  PyObject可以为NULL
-static PyObject* template_abs(PyObject* self, PyObject* args){
+static PyObject* template_test(PyObject* self, PyObject* args){
   int num;
-  if(!PyArg_ParseTuple(args,"i",&num)){
+  if(!PyArg_ParseTuple(args,"i",&num)){//i是衔接类型标识符 表示整型
     return NULL;//读取整型失败返回NULL
   }
-  return (PyObject*)Py_BuildValue("i",abs(num));//构造python对象返回
+  return (PyObject*)Py_BuildValue("i",test(num));//构造python对象返回
 }
 
-//构造模块方法的数组
+//构造模块内方法的数组
 static PyMethodDef methods[]={
-  {"abs",template_abs,METH_VARARGS},
+  {"test",template_test,METH_VARARGS},
   {NULL,NULL},
 };
 
