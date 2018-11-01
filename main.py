@@ -16,9 +16,5 @@ import logging # 日志工具
 # b=a[0:2]
 # print(b)
 
-# respond = json.loads(
-#     requests.post("http://127.0.0.1:8076/", json={"method": "getminerbyname", "id": 1,
-#                                                   "params": ['sdf@q.com']}).text)
-# print(respond['result']['miners'])
-
+bitcoin_tools.compute_target_diff()
 

@@ -11,7 +11,8 @@ def compute_target_diff():
     currenttarget = base * (2 ** power)
     print("目标值十进制:", currenttarget)
     currenttarget_hex = hex(currenttarget)
-    print("目标值十六进制:%s  左侧省略%d个0 " % (currenttarget_hex, 64 - len(currenttarget_hex)))
+    print(
+        "目标值十六进制:%s 现在%d位数 左侧省略%d个0 " % (currenttarget_hex, len(currenttarget_hex) - 2, 66 - len(currenttarget_hex)))
     print("难度值：%.20f" % (maxcurrenttargettarget / currenttarget))
 
 
